@@ -20,22 +20,22 @@ $sqlTeamItem->bind_result($idTeamItem);
         }
         ?>
     </div>
-    <div class="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-16 py-16">
+    <div class="grid grid-cols-1 diensten md:grid-cols-3 lg:grid-cols-4 gap-16 py-16">
         <?php while ($sqlTeamItem->fetch()) {
             $titleTeamItem = the_field('item2', $idTeamItem);
             $urlTeamItem = the_field('paginaurl', $idTeamItem);
             $functionTeamItem = the_field('item3', $idTeamItem);
 
-            echo '<a class="relative team overflow-hidden" href="' .get_link($idTeamItem, 'team').'/">';
+            echo '<a class="relative team diensten-block overflow-hidden" href="' .get_link($idTeamItem, 'team').'/">';
             echo '<div class="absolute bottom-0 z-10 flex w-full flex-col gradient justify-between pt-32 p-6 text-white">
                     <span class="font-bold text-xl mb-4">' .
                         $titleTeamItem .
                     '</span>
                     <span class="">
+                    
                         <span class="block font-bold text-sm">'.$functie.':</span>
                         <span class="text-sm">'.$functionTeamItem.'</span>
                     </span>
-                    <span class="absolute bottom-6 right-6 button flex items-center"><i class="ml-2 fal fa-arrow-right"></i></span>
                 </div>';
                 getImg(get_url(), $idTeamItem, 0, get_taal(), 'team', '500','550','500', 0);
             echo "</a>";

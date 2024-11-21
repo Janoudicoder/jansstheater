@@ -35,7 +35,6 @@ $sqlTeamItem->bind_result($idTeamItem);
                         <span class="block font-bold text-sm">'.$functie.':</span>
                         <span class="text-sm">'.$functionTeamItem.'</span>
                     </span>
-                    <span class="absolute bottom-6 right-6 button flex items-center"><i class="ml-2 fal fa-arrow-right"></i></span>
                 </div>';
                 getImg(get_url(), $idTeamItem, 0, get_taal(), 'team', '500','550','500', 0);
             echo "</a>";

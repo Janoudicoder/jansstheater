@@ -217,7 +217,7 @@
 		&:hover > a,
 		&.active > a,
 		&.focus > a{
-			color: $menu-item-font-color-hover;
+			color: var(--secondary);
 		}
 
 		// Menu item with icons and text
