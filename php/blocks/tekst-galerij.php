@@ -35,3 +35,4 @@ $totalImages = count($imageIds); // Totaal aantal afbeeldingen die er zijn
     </div>
 </div>
 
+git remote -v
