@@ -28,10 +28,13 @@ $sqlTeamItem->bind_result($idTeamItem);
 
             echo '<a class="relative team diensten-block overflow-hidden" href="' .get_link($idTeamItem, 'team').'/">';
             echo '<div class="absolute bottom-0 z-10 flex w-full flex-col gradient justify-between pt-32 p-6 text-white">
+            
                     <span class="font-bold text-xl mb-4">' .
                         $titleTeamItem .
                     '</span>
-                    <span class="">
+                    <span class="">'                .getImg(get_url(), $idTeamItem, 0, get_taal(), 'team', '500','550','500', 0).
+
+                    '
                     
                         <span class="block font-bold text-sm">'.$functie.':</span>
                         <span class="text-sm">'.$functionTeamItem.'</span>

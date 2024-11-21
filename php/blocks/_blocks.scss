@@ -706,6 +706,12 @@ img {
     height: 326px;
     width: 326px;
     background: #FFC20E;
+    .block-img{
+        height: 40px;
+        width: 40px
+        
+        
+    }
     .button{
         @include transition(0.3s);
         i{
