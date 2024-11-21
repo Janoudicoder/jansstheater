@@ -1,0 +1,19 @@
+User-agent: *
+Disallow: /cms/
+Disallow: /cookie/
+Disallow: /doc/
+Disallow: /fa/
+Disallow: /fancybox/
+Disallow: /google_authenticator/
+Disallow: /resize/cache/
+Disallow: /vendor/
+
+Sitemap: https://basis.sitework.link/sitemap.xml
+Sitemap: https://basis.sitework.link/sitemap-de.xml
+Sitemap: https://basis.sitework.link/sitemap-en.xml
+Sitemap: https://basis.sitework.link/sitemap-fr.xml
+Sitemap: https://basis.sitework.link/sitemap-pl.xml
+Sitemap: https://basis.sitework.link/sitemap-es.xml
+Sitemap: https://basis.sitework.link/sitemap-pt.xml
+Sitemap: https://basis.sitework.link/sitemap-da.xml
+Sitemap: https://basis.sitework.link/sitemap-cs.xml

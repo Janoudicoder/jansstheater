@@ -1,0 +1,51 @@
+//kleuren instellen
+$success: #7ddf89;
+$error: #f14d4d;
+$info: #2196F3;
+.alert{
+    top: 77px;
+    right: 5px;
+    position: absolute;
+    color: #fff;
+    padding: 7px 35px 7px 15px;
+    font-weight: 300;
+    border-radius: 5px;
+    cursor: pointer;
+    z-index: 10;
+    animation: fadeInDown 0.5s;
+    &::before{
+        content: "\e646";
+        font-family: 'themify';
+        position: absolute;
+        right: 15px;
+        top: 50%;
+        transform: translateY(-50%);
+        padding-left: 15px;
+    }
+    &.alert-success{
+        color: darken($success, 50%);
+        background-color: $success;
+    }
+    &.alert-error{
+        color: darken($error, 50%);
+        background-color: $error;
+    }
+    &.alert-info{
+        color: #fff;
+        background-color: $info;
+    }
+    &.fancybox{
+        top: 5px;
+    }
+}
+//CSS animation
+@keyframes fadeInDown {
+    0% {
+       opacity: 0;
+       transform: translateY(-20px);
+    }
+    100% {
+       opacity: 1;
+       transform: translateY(0);
+    }
+ } 

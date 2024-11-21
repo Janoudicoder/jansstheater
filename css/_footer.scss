@@ -1,0 +1,133 @@
+#footer-main {
+    padding: 0 !important; 
+    display: flex;
+    @media (max-width: 1000px) {
+        display: contents;
+
+    }
+   
+    #footer-info {
+        h4{ 
+            font-size: 25px;
+            font-weight: 300;
+            font-family: var(--headingFont);
+        }
+        h2{
+            font-size: 35px;
+        }
+        
+       
+        svg {
+            display: inline;
+            vertical-align: middle;
+            width: 1.5em; // Adjust size as needed
+            height: auto; // Maintain aspect ratio
+            fill: currentColor; // Matches the text color
+            color: #FFA3A3;
+        
+          }
+          
+          /* Specific class for inline SVGs used as icons */
+          .icon-inline {
+            display: inline;
+            vertical-align: middle;
+            width: 1.5em;
+            height: auto;
+            margin-right: 0.5em; // Adds space between icon and text
+          }
+          
+          /* Example if you want a different style for footer icons */
+          .footer-icon {
+            display: inline-block;
+            vertical-align: middle;
+            width: 2em;
+            height: 2em;
+            margin-right: 0.75em;
+            fill: #ffa3a3; // Specific color
+          }
+        align-content: center;
+        background: var(--primary);
+        padding-top: 30px;
+        padding-bottom: 30px;
+        color: #fff;
+        width: 50%;
+        height: 600px;
+        @media (max-width: 1000px) {
+            width: 100%;
+        }
+    
+        /* Create a diagonal line that starts steep and becomes less steep */
+        clip-path: polygon(1% 0%,101% 13%,101% 100%,0% 100%,0% 0%);
+    }
+    
+    #footer-formulier {
+        width: 50%;
+        background-color: #2222228c;
+        justify-self: right; 
+        height: 523px;
+        align-self: end;
+        @media (max-width: 1000px) {
+            width: 100%;
+        }
+    }
+    
+
+    #footer-logo {
+        width: 200px;
+        margin-bottom: 1.5rem;
+    }
+
+    #socialmedia {
+        float: left;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        flex-wrap: wrap;
+        gap: 1rem;
+
+        a {
+            height: 45px;
+            width: 45px;
+            border-radius: 5px;
+            border: 3px solid var(--primary);
+            background-color: var(--backBlack);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: 0.4s all;
+
+            i {
+                font-size: 20px;
+                color: white;
+                margin: 0;
+            }
+
+            &:hover {
+                background-color: var(--primary);
+            }
+        }
+    }
+   
+}
+
+
+#footer-small{
+    background-color: var(--darkpurple);
+    span{
+        opacity: 0.5;
+    }
+}
+#sitework{
+    color: white;
+    svg{
+        path {
+            fill: white;
+        }
+    }
+    .sitework-footer{
+        opacity: 1; 
+        //font-family: $sitework;
+        font-weight: 600;
+        font-size: 14px;
+    }
+}

@@ -1,0 +1,42 @@
+//--FONT FAMILY--//
+//algemene font family
+$hoofdfont: var(--bodyFont), var(--bodyFontType); 
+//font familiy voor de koppen
+$subfont: var(--headingFont), var(--headingFontType);
+//font family voor 'sitework' in de footer (niet wijzigen)
+$sitework: var(--sitework), var(--siteworkType);
+//--BASIS--//
+//$font-size-base : var(--baseFontSize);
+
+.subfont {
+    font-family: $subfont;
+}
+a, p, span{
+    font-family: $subfont;
+    color: white;
+}
+
+
+
+//--HEADERS--//
+$headings : h1 h2 h3 h4 h5 h6;
+$font-size-upper : 42px;
+$font-size-dec : 4px; 
+
+@each $heading in $headings {
+    #{$heading} {
+        font-size: $font-size-upper;
+        //font-size: calc($font-size-upper / var(--baseFont)) + em;
+       // color: var(--primary);
+    } 
+
+    .#{$heading} {
+        font-size: $font-size-upper;
+        //font-size: calc($font-size-upper / var(--baseFont)) + em;
+        color: var(--primary);
+    }
+
+    $font-size-upper : $font-size-upper - $font-size-dec;
+}
+
+@include linkalgemeen(var(--text), var(--text), var(--primary), var(--text));

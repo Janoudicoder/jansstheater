@@ -1,0 +1,133 @@
+.onscroll{
+	/*hier komen css wijzigingen zodra je gaat scrollen. Wanneer dit wordt getriggerd is aan te passen in sitework.js*/
+	#header-main{
+		position: fixed;
+		height: 72px;
+		#topmenu{
+			display: none;
+		}
+		
+		
+	}
+	#slider-main{
+		margin-top: 118px;
+		
+	}
+	#logo {
+		width: 100px !important;
+		max-height: 50px !important;
+
+		img {
+
+		}
+	}
+	// .nav-toggle{
+	// 	margin-top: 20px;
+	// }
+	.right {
+		display: flex;
+		//flex-direction: row-reverse;
+	}
+	.taalkeuze:hover>ul {
+		padding-top: 40px;
+	}
+	.svg-container {
+		position: absolute;
+		bottom: -104px;
+		@media (max-width: 976px) {
+			bottom: 352px;
+		}
+		left: 0;
+		width: 100%;
+		height: auto;
+	}
+	
+	.svg-container svg {
+		width: 100%;
+		height: auto;
+	}
+	
+
+}
+
+.progress-wrap {
+	position: fixed;
+	right: 10px;
+	bottom: 10px;
+	height: 46px;
+	width: 46px;
+	cursor: pointer;
+	display: block;
+	border-radius: 50px;
+	box-shadow: inset  0 0 0 2px rgba(0,0,0,0.2);
+	z-index: 10000;
+	opacity: 0;
+	visibility: hidden;
+	transform: translateY(15px);
+	-webkit-transition: all 200ms linear;
+	transition: all 200ms linear;
+	--test: var(--primary);
+	@include mq(mqTabletPort){
+		display: none;
+	}
+}
+.progress-wrap.active-progress {
+	opacity: 1;
+	visibility: visible;
+	transform: translateY(0);
+}
+.progress-wrap::after {
+	position: absolute;
+	@include fa();
+    font-family: "Font Awesome 5 Pro";
+    content: '\f062';
+    font-weight: 600;
+	text-align: center;
+	line-height: 46px;
+	font-size: 18px;
+	color: var(--primary);
+	left: 0;
+	top: 0;
+	height: 46px;
+	width: 46px;
+	cursor: pointer;
+	display: block;
+	z-index: 1;
+	-webkit-transition: all 200ms linear;
+    transition: all 200ms linear;
+}
+.progress-wrap::before {
+	position: absolute;
+	@include fa();
+    font-family: "Font Awesome 5 Pro";
+    font-weight: 600;
+	text-align: center;
+	line-height: 46px;
+	font-size: 18px;
+	opacity: 0;
+	background-image: linear-gradient(298deg, var(--red), var(--yellow));
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;
+	left: 0;
+	top: 0;
+	height: 46px;
+	width: 46px;
+	cursor: pointer;
+	display: block;
+	z-index: 2;
+	-webkit-transition: all 200ms linear;
+    transition: all 200ms linear;
+}
+.progress-wrap:hover::before {
+	opacity: 1;
+}
+.progress-wrap svg path {
+	fill: none;
+}
+.progress-wrap svg.progress-circle path {
+	stroke: var(--primary);
+	stroke-width: 4;
+	box-sizing:border-box;
+	-webkit-transition: all 200ms linear;
+    transition: all 200ms linear;
+}

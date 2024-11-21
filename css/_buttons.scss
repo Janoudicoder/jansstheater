@@ -1,0 +1,35 @@
+.btn,a[title="knop"] {
+    font-size: var(--baseFontSize);
+	display: inline-block;
+	width: fit-content;
+	text-decoration: none;
+	background-color: var(--primary);
+	color: #fff !important;
+	padding: 10px 20px;
+    transition: all 300ms ease-in-out;
+	//border-radius: var(--borderRadius);
+	
+	&:hover, &:focus {
+        background-color: #ff0084;
+    }
+
+    /* Styling for the arrow on the primary button */
+    &::after {
+        @include fa();
+        content: "\f054"; /* Unicode for FontAwesome right arrow icon */
+        font-family: "Font Awesome 5 Pro";
+        margin-left: 8px; /* Adjusted margin-left to make spacing smaller */
+        font-size: 12px; /* Reduced font size for the arrow */
+        color: white; /* Black color for the icon */
+        background-color:  rgba(221, 208, 222, 0.21); /* Primary color background for the icon */
+        padding: 6px; /* Reduced padding to shrink the circle */
+        border-radius: 50%; /* Still fully round */
+        font-weight: 600;
+        display: inline-flex;
+        justify-content: center;
+        align-items: center;
+        width: 24px; /* Reduced width */
+        height: 24px; /* Set height to match width for a smaller circle */
+		
+    }
+} 

@@ -1,0 +1,353 @@
+//--INCLUDE SASS FILES--/
+@import 'settings.css';
+@import "tailwind-dist.css";
+@import "_mixins.scss";
+@import "_typography.scss";
+@import "_editorjs.scss";
+@import "navigation.scss";
+@import "_buttons.scss";
+@import "_form.scss";
+@import "_header.scss";
+@import "_footer.scss";
+@import "_pagination.scss";
+@import "_realworks.scss";
+@import "_customfancybox.scss";
+@import "_onscroll.scss";
+@import "../php/blocks/blocks.scss";
+@import "vervolgpagina";
+
+@include scrollbars(5px, var(--primary));
+@include selection(var(--primary));
+
+//--BASIS--//
+* {
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+
+img:not([src]):not([srcset]) {
+    visibility: hidden;
+}
+
+.lazy {
+    background: #efefef;
+}
+
+body {
+    scroll-behavior: smooth;
+    font-family: $hoofdfont;
+    font-size: var(--baseFontSize);
+    color: var(--text);
+    background-color: var(--background);
+    width: 100%;
+    height: 100%;
+    line-height: var(--baseLineHeight);
+    @include transition(0.3s);
+
+    @include mq(700px) {
+        font-size: 16px;
+    }
+}
+
+header,
+main,
+footer {
+    float: left;
+    width: 100%;
+}
+
+footer {
+    @include mq(mqTabletPort) {
+        padding-bottom: 62px;
+    }
+}
+
+.cookie-btn {
+    position: fixed !important;
+    z-index: 9;
+    height: 60px;
+    background-color: var(--secondary);
+    border-top-left-radius: 0.375rem;
+    border-top-right-radius: 0.375rem;
+    padding: 0.5rem;
+    left: 1.5rem;
+    bottom: -20px;
+
+    &:hover {
+        bottom: 0px;
+    }
+	@include mq(800px) {
+		display: none;
+	}
+}
+
+//--SECTIES MAIN & INNER--//
+
+section {
+    width: 100%;
+    float: left;
+    //padding: 0px 30px;
+    position: relative;
+
+    @include mq(mqMobileL) {
+        padding: 0 15px;
+    }
+
+    &#mainmenu-main {
+        background: var(--primary);
+    }
+
+    &#content-home-main {
+
+        ul,
+        ol {
+            margin-left: 15px;
+        }
+    }
+
+    &#content-vervolg-main {
+
+        ul,
+        ol {
+            margin-left: 15px;
+        }
+
+        .content {
+            img {
+                margin-top: 0.5rem;
+                margin-bottom: 0.5rem;
+                border-radius: var(--borderRadius);
+            }
+        }
+    }
+
+    &#galerij-main {
+        // background: var(--secondary);
+        // .afbeelding-galerij{
+        // 	img{
+        // 		transform: scale(1);
+        // 		@include transition(0.3s);
+        // 	}
+        // 	&:hover{
+        // 		img{
+        // 			transform: scale(1.03);
+        // 		}
+        // 	}
+        // }
+    }
+}
+
+.sectie-inner {
+    max-width: $max-width;
+    width: 100%;
+    position: relative;
+    margin: 0 auto;
+}
+
+//--VERVOLGPAGINA--//
+.picture-container {
+    position: relative;
+    height: 100%;
+
+    picture {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+
+        img {
+            @include transition(0.3s);
+            transform: scale(1);
+            object-fit: cover;
+            height: 100%;
+            width: 100%;
+        }
+    }
+}
+
+#afbeeldingen-zijkant {
+    .afbeelding-zijkant {
+        border-radius: var(--borderRadius);
+        width: 80%;
+        justify-self: end;
+        z-index: 2;
+        width: 100%;
+
+        &:nth-child(1) {
+            margin-top: 0;
+            z-index: 0;
+            width: 70%;
+            grid-column-start: 1;
+            grid-column-end: 3;
+        }
+
+        &:nth-child(2) {
+            justify-self: start;
+            width: 100%;
+            margin-top: -20%;
+        }
+
+        img {
+            transform: scale(1);
+            @include transition(0.3s);
+        }
+
+        &:hover {
+            img {
+                transform: scale(1.03);
+            }
+        }
+    }
+}
+
+//--PARALLAX--//
+#parallax {
+    padding-left: 0px;
+    padding-right: 0px;
+
+    .parallax-container {
+        width: 100%;
+        height: 50vh;
+        position: relative;
+        overflow: hidden;
+        font-size: 16px;
+
+        @media screen and (max-width: 700px) {
+            height: 30vh;
+        }
+
+        .img-parallax {
+            width: 100vmax;
+            z-index: -1;
+            position: absolute;
+            top: 0;
+            left: 50%;
+            transform: translate(-50%, 0);
+            pointer-events: none;
+        }
+    }
+}
+
+//--SOCIAL MEDIA--//
+#socialmedia {
+    float: right;
+    margin-top: 20px;
+
+    .fab,
+    .fas {
+        font-size: 20px;
+        line-height: 100%;
+        color: #000;
+        float: right;
+        margin-left: 20px;
+        transition: all 0.3s ease-out;
+
+        &:hover {
+            color: #000;
+        }
+    }
+}
+
+//--DOCUMENTEN--//
+ul.documenten {
+    width: 100%;
+    float: left;
+    margin-bottom: 30px;
+    margin-left: 0 !important;
+    // border-top: 1px solid var(--primary);
+
+    >li {
+        list-style: none;
+        width: auto;
+        font-weight: normal;
+
+        >a {
+            color: var(--text);
+            padding: 1rem;
+            text-decoration: none;
+            display: block;
+            background-color: white;
+            box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;            
+            // border-bottom: 1px solid var(--primary);
+
+            &:before {
+                @include fa();
+                font-weight: 600;
+                content: "\f15b";
+                font-family: "Font Awesome 5 Pro";
+                padding-right: 1rem;
+                float: left;
+            }
+
+            &:after {
+                @include fa();
+                font-weight: 600;
+                content: "\f019";
+                float: right;
+                font-family: "Font Awesome 5 Pro";
+                @include transition(0.4s);
+            }
+
+            &:hover {
+                color: var(--text);
+                background-color: darken(white, 3%);
+
+                &::after {
+                    color: var(--primary);
+                }
+            }
+        }
+    }
+}
+
+//Mobile CTA
+#mobile-cta {
+    display: none;
+
+    @include mq(mqTabletPort) {
+        position: fixed;
+        display: block;
+        background: white;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        border-top: 1px solid var(--primary);
+        box-shadow: 0px 0px 14px 0px rgba(0, 0, 0, 0.21);
+        z-index: 22;
+
+        ul {
+            display: flex;
+            flex-direction: row;
+            align-items: stretch;
+            list-style: none;
+
+            li {
+                flex: 1;
+                border-right: 1px solid var(--primary);
+                text-align: center;
+
+                &:last-child {
+                    border-right: 0px;
+                }
+
+                a,span {
+                    padding: 0.5rem 1rem;
+                    font-size: 25px;
+                    display: block;
+                    cursor: pointer;
+                }
+            }
+        }
+    }
+}
+
+
+//eventuele extra css bestanden
+@import "../slick/slick";
+@import "../slick/slick-theme";
+//standaard inladen
+@import "jquery.fancybox.min.css";
+@import "_animate.css";
+// @import "swiper-bundle.min.css";

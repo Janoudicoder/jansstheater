@@ -1,0 +1,35 @@
+// /**
+// * Styles for the editor JS
+// */
+
+.codex-editor {
+    .codex-editor__redactor {
+        .ce-block {
+            
+        }
+    }
+}
+
+.ce-block__content, .ce-toolbar__content {
+    width: 100%;
+
+    @media (min-width: 480px) {
+        max-width:480px
+    }
+    
+    @media (min-width: 768px) {
+        max-width:768px
+    }
+    
+    @media (min-width: 976px) {
+        max-width:976px
+    }
+    
+    @media (min-width: 1200px) {
+        max-width:1200px
+    }
+    
+    @media (min-width: 1440px) {
+        max-width:1440px
+    }
+}

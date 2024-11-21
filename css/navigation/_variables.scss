@@ -1,0 +1,92 @@
+
+// COLOR PALETTE
+// ================================
+$white:				#ffffff;
+$gray:				#70798b;
+$gray-light:		#f0f0f0;
+$gray-lighter:		#fbfcfd;
+$gray-lightest:		#fdfdfd;
+
+$blue:				#3BAFDA;
+$green:				#8CC152;
+$red:				#B03060;
+$orange:			#F9690E;
+$yellow:			#F6BB42;
+$purple:			#967ADC;
+
+
+// ORGANIZING THE COLORS
+//===================================
+$background-color: 		var(--backBlack); 
+$font-color:			$white;
+$font-color-hover:		var(--primary);
+$border-color:			$gray-light;
+
+
+// SETTING COLORS
+//===================================
+
+// Navbar
+$navbar-background-color: 					transparent;
+
+// Brand
+$brand-font-color: 							$font-color;
+
+// Toggle button
+$toggle-icon-color: 						$font-color;
+
+// Offcanvas panel
+$offcanvas-background-color: 				$white;
+$offcanvas-close-icon-color: 				$font-color-hover;
+
+// Menu item
+$menu-item-font-color: 						$font-color;
+$menu-item-font-color-hover: 				$font-color-hover;
+
+// Search button
+$search-button-background-color:			var(--backBlack);
+$search-button-icon-color:					$font-color;
+$search-button-icon-color-hover: 			$font-color-hover;
+
+// Search panel
+$search-panel-background-color: 			$background-color;
+$search-panel-font-color:					$font-color;
+$search-panel-close-icon-color: 			$font-color;
+
+// Button
+$button-background-color: 					$purple;
+$button-font-color: 						$white;
+
+// Submenu
+$submenu-background-color: 					$white;
+
+// Dropdown
+$dropdown-font-color: 						var(--backBlack);
+$dropdown-font-color-hover: 				$font-color-hover; // used for "active" state too
+
+// Megamenu tabs
+$megamenu-tabs-background-color: 			$background-color;
+$megamenu-tabs-font-color: 					$font-color;
+$megamenu-tabs-font-color-hover: 			$font-color;
+$megamenu-tabs-background-color-hover: 		#f5f5f5;
+
+// Megamenu list
+$megamenu-list-font-color: 					$font-color;
+$megamenu-list-font-color-hover: 			$white;
+$megamenu-list-background-color-hover: 		$purple;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

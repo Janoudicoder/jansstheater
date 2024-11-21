@@ -1,0 +1,149 @@
+//---MEDIA QUERIES---//
+/*breakpoinst aanmaken*/
+$max-width: 1300px;
+$mqLaptop_BP: 1101px;
+$mqTabletLand_BP: 1100px;
+$mqTabletPort_BP: 800px;
+$mqMobileL_BP: 700px;
+$mqMobileS_SM: 640px;
+$mqMobile_BP: 400px;
+$mqMobileS_BP: 350px;
+
+/*media queries aanmaken*/
+/*voorbeeld voor aanroepen: @include mq(mqLaptop){ hier komt je css }*/
+@mixin mq($media) {
+  @if $media == mqLaptop {
+      @media screen and (max-width: $max-width) and (min-width: $mqLaptop_BP) { @content; }
+  }
+  @else if $media == mqTabletLand {
+      @media only screen and (max-width: $mqTabletLand_BP) { @content; }
+  }
+  @else if $media == mqTabletPort {
+      @media only screen and (max-width: $mqTabletPort_BP) { @content; }
+  }
+  @else if $media == mqMobileL {
+      @media only screen and (max-width: $mqMobileL_BP) { @content; }
+  }
+  @else if $media == mqMobile {
+      @media only screen and (max-width: $mqMobile_BP) { @content; }
+  }
+  @else if $media == mqMobileS {
+      @media only vscreen and (max-width: $mqMobileS_BP) { @content; }
+  }
+  @else{
+      @media only screen and (max-width: $media) { @content; }
+  }
+}
+
+@mixin scrollbars($size, $foreground-color, $background-color: #f5f6fa) {
+  ::-webkit-scrollbar {
+    width:  $size;
+    height: $size;
+    border-radius: 5px;
+  }
+  
+  ::-webkit-scrollbar-thumb {
+    background: $foreground-color;
+  }
+  
+  ::-webkit-scrollbar-track {
+    background: $background-color;
+    border: 0;
+  }
+  
+  // For Internet Explorer
+  body {
+    scrollbar-face-color: $foreground-color;
+    scrollbar-track-color: $background-color;
+  }
+}
+
+@mixin selection($background-color,$foreground-color: #fff, ){
+  ::-moz-selection { /* Code for Firefox */
+    color: $foreground-color;
+    background: $background-color;
+  }
+  
+  ::selection {
+    color: $foreground-color;
+    background: $background-color;
+  }
+}
+
+@mixin vierkant($breedte, $hoogte, $backgroundcolor) {
+  width: $breedte;
+  height: $hoogte;
+  background-color: $backgroundcolor;
+}
+
+@mixin fa(){
+  display: inline-block;
+  font-style: normal;
+  font-variant: normal;
+  text-rendering: auto;
+  -webkit-font-smoothing: antialiased;
+}
+
+@mixin transition ($value) {
+  -webkit-transition: all ease-in-out $value;
+  -moz-transition: all ease-in-out $value;
+  transition: all ease-in-out $value;
+}
+
+@mixin appearance ($value) {
+  -webkit-appearance: $value;
+  -moz-appearance: $value;
+  appearance: $value;
+}
+
+@mixin boxshadow ($value) {
+    -webkit-box-shadow: $value;
+    -moz-box-shadow: $value;
+    box-shadow: $value;
+}
+
+@mixin radius ($value) {
+    -webkit-border-radius: $value;
+    -moz-border-radius: $value;
+    border-radius: $value;
+}
+
+@mixin bgsize ($value) {
+    -webkit-background-size: $value; 
+    -moz-background-size: $value; 
+    background-size: $value; 
+}
+
+@mixin clearfix() {
+    &:before,
+    &:after {
+        content: "";
+        display: table;
+    }
+    &:after {
+        clear: both;
+    }
+}
+
+@mixin linkalgemeen ($link, $visit, $hover, $active) {
+  a {
+    transition: all 0.3s ease-out;
+    color: $link;
+    
+    &:visited {
+
+      color: $visit;
+
+    }
+    &:hover {
+
+      color: $hover;   
+    }
+
+    &:active {
+
+      color: $active;
+
+    }
+  }
+}

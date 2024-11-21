@@ -1,0 +1,186 @@
+// hoofdmenu variabelen
+// ====================
+$hm-background: $donkerblauw; // algemene achtergrondkleur
+$hm-title-background: #2C353E;  // achtergrondkleur 'hoofdmenu beheerders'
+$hm-title-color:#51637b;  // tekstkleur 'hoofdmenu beheerders'
+$hm-textkleur: #fff; // tekstkleur menuitem
+$hm-background-hover: #2C353E; // achtergrondkleur menuitem hover
+$hm-background-active: #2C353E; // achtergrondkleur menuitem actief
+$hm-border-bottom: 1px solid #475260; // border bottom menuitem
+
+// opmaak hoofdmenu
+// ================
+#hoofdmenu {
+    position: fixed;
+    left: 0px;
+    margin-top: 70px;
+    height: calc(100vh - 70px);    
+    border-radius: 0 8px;
+    width: 250px;
+    background: $hm-background;
+    overflow-x: auto;
+    z-index: 99;
+    transition: all 0.3s ease-out;
+
+    @media screen and (max-width: 1270px) {
+        width: 60px;
+    }
+
+    #title {
+        background: $hm-title-background;
+        padding: 14px 22px;
+        color: $hm-title-color;
+        font-size: 15px;
+        width: 100%;
+        height: 50px;
+        float: left;
+        border-bottom: $hm-border-bottom;
+        transition: all 0.3s ease-out;
+
+        @media screen and (max-width: 1270px) {
+            font-size: 0px;
+        }
+    }
+
+    li {
+        position: relative;
+        list-style: none;
+        width: 100%;
+        float: left;
+        border-bottom: $hm-border-bottom;
+        
+        a {
+            font-weight: 300;
+            width: 100%;
+            height: 50px;
+            float: left;
+            padding: 14px 22px;
+            font-size: 15px;
+            color: $hm-textkleur;
+            text-decoration: none;
+            transition: all 0.3s ease-out;
+            
+            &:hover {
+                background: $hm-background-hover;
+            }
+
+            &.active {
+                background: $hm-background-active;
+            }
+
+            &#web {
+                border-bottom: none !important;
+
+                @media screen and (max-width: 1270px) {
+                    border-bottom: $hm-border-bottom !important;
+                }
+            }
+
+            .menu-item {
+                float: left;
+                transition: font-size 0.2s ease-in;
+                @media screen and (max-width: 1270px) {
+                    font-size: 0px;
+                }
+            }
+
+            .menu-icon {
+                float: left;
+                font-size: 18px;
+                margin-right: 12px;
+                height: 20px;
+                width: 20px;
+                line-height: 22px;
+            }
+        }
+        .menu-drop {
+            position: absolute;
+            cursor: pointer;
+            top: 15px;
+            right: 20px;
+            z-index: 10;
+            color: $hm-textkleur;
+            float: right;
+            font-size: 18px;
+            line-height: 22px;
+            margin-right: 0px;
+            width: fit-content;
+            height: fit-content;
+            transition: 0.5s all;
+
+            @media screen and (max-width: 1270px) {
+                visibility: hidden;
+                opacity: 0;
+            }
+
+            &.active {
+                transform: rotate(180deg);
+            }
+        }
+        .cat-dropdown {
+            max-height: 40px;
+            overflow: hidden;
+            transition: 0.5s all;
+
+            @media screen and (max-width: 1270px) {
+                max-height: 100%;
+                overflow: visible;
+
+                li {
+                    a {
+                        height: 50px !important;
+                        padding: 14px 22px !important;
+                    }
+                }
+            }
+
+            li {
+                a {
+                    font-size: 14px;
+                    height: 40px;
+                    padding: 10px 0 10px 40px;
+
+                    .menu-icon {
+                        font-size: 15px;
+                        margin-right: 4px;
+                    }
+                }
+
+                &:last-of-type {
+                    border-bottom: none !important;
+                }
+            }
+
+            &.menuopen {
+                max-height: 100%;
+                overflow: visible;
+            }
+        }
+    }
+
+    &.menuopen {
+        width: 260px !important;
+        #title {
+            font-size: 15px;
+        }
+        .menu-item {
+            font-size: 15px;
+        }
+        .cat-dropdown {
+            li {
+                a {
+                    padding: 14px 22px 14px 40px !important;
+                }
+            }
+        }
+        
+    }
+
+    &::-webkit-scrollbar {
+        width: 5px;
+        background-color: $hm-background;
+    }
+    &::-webkit-scrollbar-thumb {
+        background-color: $hm-background-hover;
+    }
+}

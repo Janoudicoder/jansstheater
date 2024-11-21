@@ -1,0 +1,107 @@
+#breadcrumbs{
+    background: white;
+    border-bottom: 1px dashed var(--lightGray);
+    .container{
+        ul{
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            li{
+                display: inline-block;
+                margin: 0 10px;
+                a{
+                    color: var(--primary);
+                    position: relative;
+                    @include transition(0.3s);
+                    &:after{
+                        display: inline-block;
+                        font-style: normal; 
+                        font-variant: normal;
+                        text-rendering: auto;
+                        font-weight: 600;
+                        content: "";
+                        position: absolute;
+                        right: -15px;
+                        top: 4px;
+                        font-size: 10px;
+                        font-family: "Font Awesome 5 Pro";
+                    }
+                }
+            }
+        }
+    }
+}
+
+#content-vervolg-main{
+    #zoekblok{
+        h1{
+            color: var(--primary);
+            margin-bottom: 10px;
+        }
+        #zoekform{
+            display: grid;
+            gap: 20px;
+            #q{
+                border-radius: 8px;
+                padding: 12px 18px;
+                background: #EEE;
+            }
+            .btn{
+                
+            }
+        }
+        #zoekresultaten{
+            display: grid;
+            gap: 30px;
+            margin-bottom: 70px;
+            .zoekitem{
+                display: flex;
+                flex-direction: column;
+                gap: 5px;
+                background: #fff;
+                color: var(--backBlack);
+                align-content: center;
+                align-items: center;
+                border-radius: 8px;
+                box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+
+                .picture-container{
+                    border-radius: 8px 8px 0 0;
+                    overflow: hidden;
+                }
+                .zoekHighlight {
+                    color: var(--primary);
+                    font-weight: 600;
+                }
+                .zoek-img {
+                    height: 100%;
+                    width: 100%;
+
+                    .block-img {
+                        height: 100%;
+                    }
+                }
+                .zoekitem-tekst{
+                    display: grid;
+                    gap: 20px;
+                    padding: 20px;
+                    width: 100%;
+
+                    a{
+                        width: fit-content;
+                        text-decoration: none !important;
+                    }
+                    .zoekitem_titel{
+                        font-size: 22px;
+                        margin-bottom: 10px;
+                        color: var(--primary);
+                    }
+                }
+            }
+        }
+    }
+}
+
+.zoekterm-hidden {
+    display: none;
+}

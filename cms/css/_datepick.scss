@@ -1,0 +1,10 @@
+.ui-state-highlight, .ui-widget-content .ui-state-highlight, .ui-widget-header .ui-state-highlight {
+    border: 1px solid $lichterblauw !important;
+    background-color: $lichterblauw !important;
+    color: #222 !important;
+}
+
+.ui-state-active, .ui-widget-content .ui-state-active, .ui-widget-header .ui-state-active, a.ui-button:active, .ui-button:active, .ui-button.ui-state-active:hover {
+    border: 1px solid $branding-color !important;
+    background: $branding-color !important;
+}

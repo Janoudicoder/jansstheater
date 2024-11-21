@@ -1,0 +1,124 @@
+.paginatie {
+    width: 100%;
+    padding: 10px 6px 10px 10px;
+    overflow: hidden;
+    background-color: #000000;
+    margin-top: 15px;
+    float: left;
+}
+
+.paginatie_inactief, .paginatie_actief {
+    float: left;
+    margin-right: 10px;
+    width: 30px;
+    height: 30px;
+    text-align: center;
+    border: 1px solid #fff;
+    color: #fff;
+    cursor: pointer;
+    transition: all 0.3s ease-out;
+    
+    &:hover {
+        background: #ccc;
+    }
+}
+
+.paginatie_inactief {
+    background: var(--secondary);
+    color: #FFFFFF;
+}
+
+#paginatie_actief {
+    background: var(--primary);
+    color: #FFFFFF;
+}
+
+#vorige, #volgende {
+    text-indent: -9999px;
+    float: left;
+    height: 30px;
+    width: 30px;
+    margin-top: 0px;
+    padding-top: 2px;
+    padding-bottom: 1px;
+    cursor: pointer;
+    position: relative;
+    margin-right: 10px;
+    -webkit-appearance: none;
+    
+
+    &:hover {
+        background: #ccc;
+    }
+}
+
+.volgende-pijl, .vorige-pijl {
+    position: relative;
+    float: left;
+
+    &:hover:after {
+        background: #ccc;
+    }
+
+    &:after {
+        @include fa();
+        font-family: "Font Awesome 5 Pro";
+        font-weight: 600;
+        color: #FFF;
+        display: block;
+        border: 1px solid #fff;
+        background-color: var(--secondary);
+        font-size: 15px;
+        position: absolute;
+        z-index: 25;
+        text-align: center;
+        padding-top: 7px;
+        width: 28px;
+        height: 21px;
+        transition: all 0.3s ease-out;
+    }
+}
+
+.volgende-pijl:after {
+    content: '\f105';
+}
+
+.vorige-pijl:after {
+    content: '\f104';
+}
+
+// Woning aanbod paginatie
+#pagination {
+    display: flex;
+    gap: 0.75rem;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    flex-wrap: wrap;
+    margin-bottom: 2rem;
+
+    .page-item {
+        opacity: 1;
+        padding: 8px 12px;
+        border-radius: 4px;
+        background-color: var(--lightGray);
+        color: var(--text);
+
+        &.active,
+        &:hover {
+            background-color: var(--primary);
+            color: white;
+        }
+        &.prev {
+
+        }
+        &.next {
+
+        }
+        &.disabled {
+            opacity: 0.25;
+            pointer-events: none;
+            cursor: not-allowed;
+        }
+    }
+}
