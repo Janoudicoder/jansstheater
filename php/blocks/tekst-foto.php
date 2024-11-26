@@ -27,7 +27,7 @@ if($textBlock){
     <?php if($layoutBlock == "foto-links-tekst-rechts"): ?>
         <div class="relative <?=$TextGridLinks;?> z-10">
             <div class="absolute inset-0 z-0">
-                <svg width="471" height="315" viewBox="0 0 568 388" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <svg width="553" height="377" viewBox="0 0 568 388" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <path d="M0 0H568L547.714 364.038L0 388V0Z" fill="#D03184"/>
                 </svg>
             </div>

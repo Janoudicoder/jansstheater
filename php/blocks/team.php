@@ -40,7 +40,6 @@ $sqlTeamItem->bind_result($idTeamItem);
                         <span class="text-sm">'.$functionTeamItem.'</span>
                     </span>
                 </div>';
-                getImg(get_url(), $idTeamItem, 0, get_taal(), 'team', '500','550','500', 0);
             echo "</a>";
         } ?>
     </div>

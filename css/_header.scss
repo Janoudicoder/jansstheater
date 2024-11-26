@@ -130,12 +130,12 @@
 
 .svg-container {
     position: absolute;
-    bottom: 5px;
+    bottom: -55px;
     left: 0;
     width: 100%;
     height: auto;
     @media (max-width: 976px) {
-        bottom: 406px;
+        bottom: -23px;
     }
 }
 
@@ -301,11 +301,18 @@
                     align-items: flex-end;
 
                     @include mq($mqMobileS_SM) {
-                        top: 30%;
+                        top: 47%;
                         right: auto;
                         left: 50%;
                         transform: translate(-95%, 16%);
+                        .btn{
+                            position: absolute;
+                            bottom: -8px;
+                            right: -181px;
+                        
+                        }
                     }
+                    
 
                     span {
                         font-family: var(--bodyFont) !important;
@@ -314,9 +321,18 @@
                         cursor: auto;
                         font-weight: 300px !important;
                         font-size: 42px;
+                        line-height: 3.5rem !important;
+
                         @media (max-width: 1000px) {
                          font-size: 26px;
+                         line-height: 2rem !important;
+
                         }
+                        @media (max-width: 640px) {
+                            font-size: 18px;
+                            line-height: 2rem !important;
+
+                           }
 
                         &:hover {
                             color: var(--lightGray);

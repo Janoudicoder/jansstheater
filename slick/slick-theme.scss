@@ -58,7 +58,7 @@ $slick-opacity-not-active: 0.25 !default;
 
 /* Arrows */
 
-.slick-prev,
+/*.slick-prev,
 .slick-next {
     position: absolute;
     display: block;
@@ -96,7 +96,48 @@ $slick-opacity-not-active: 0.25 !default;
         -webkit-font-smoothing: antialiased;
         -moz-osx-font-smoothing: grayscale;
     }
-}
+} */
+.slick-next,.slick-prev
+            {
+                position: absolute;
+                top: calc(50% - 1rem);
+                width: 4rem !important;
+                height: 4rem !important;
+                background-color:var(--secondary);
+                color: white;
+                border-radius: 100%;
+                font-size: 0 !important;
+                display: inline-flex;
+                justify-content: center;
+                align-items: center;
+                cursor: pointer;
+                z-index: 1;
+                @include transition(0.3s);
+
+                &:hover {
+                    background-color: var(--secondary);
+                }
+            }
+            .slick-prev
+            {
+                left: 10px;
+
+                &::before {
+                    color: white ;
+                    content: "\f053" !important;
+                    font-family: "Font Awesome 5 Pro" !important;
+                }
+            }
+            .slick-next
+            {
+                right: 10px;
+
+
+                &::before {
+                    content: "\f054" !important;
+                    font-family: "Font Awesome 5 Pro" !important;
+                }
+            }
 
 
 

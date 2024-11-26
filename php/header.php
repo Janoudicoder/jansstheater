@@ -16,14 +16,15 @@
     <section id="slider-main" class="<?php echo (get_id() != "1") ? "slider-vervolg" : "";?>">
         <?php include("php/headers/slider.php"); ?>
         <?php //include("php/headers/slider-blokken.php"); ?>
-        <?php //include("php/headers/slider-container.php"); ?> 
-    </section>
-    <div class="svg-container">
-    <svg width="1728" height="158" viewBox="0 0 1728 158" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <?php //include("php/headers/slider-container.php"); ?>
+        <div class="svg-container">
+        <svg width="1728" height="158" viewBox="0 0 1728 158" fill="none" xmlns="http://www.w3.org/2000/svg">
         <path d="M0 0L1728 42.1333V95.6778L0 158V0Z" fill="#7B2377"/>
         <path d="M0 82.5L1728 82.5V113.033L0 158V82.5Z" fill="#8A3486"/>
     </svg>
-</div>
+</div> 
+    </section>
+   
 
 
 

@@ -178,10 +178,15 @@
     background-color: #FFC20E;
     width: 100%;
     height: 103%;
-  
     
    
 }
+@media (max-width: 640px) { /* Target small screens */
+    .tekstgalerij-background::after {
+        height: 127%;
+    }
+}
+
 .tekstgalerij-background{
     h3{
         font-size: 38px;
@@ -202,8 +207,8 @@
     }
 
 }
+
 #galerij-container {
-    display: grid;
     grid-template-columns: 370px 270px; /* Dit zorgt ervoor dat de eerste kolom 270px breed is en de tweede 370px */
     grid-template-rows: 300px 270px; /* Dit maakt de eerste rij 300px hoog en de tweede 270px */
     gap: 10px;
@@ -245,10 +250,34 @@
     box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.3); /* Add drop shadow */
 }
 
+/* Default Grid Layout for Larger Screens */
+
+
+/* Media query for small screens */
+@media (max-width: 640px) {
+    #galerij-container {
+        place-content: center;
+        text-align: -webkit-center;
+        overflow: hidden;
+        width: 100%;
+    }
+
+    .slider {
+        display: flex;
+        transition: transform 0.5s ease;
+    }
+
+    .slider-item {
+        flex: 0 0 100%; /* Each image takes 100% width */
+        width: 100%;
+        height: auto;
+    }
+}
+
 
 
 .block-img {
-    display: flex;
+  //  display: flex;
     //justify-content: center;
     align-items: center;
 }
@@ -273,10 +302,17 @@ img {
     
     .nieuws-laadmeer-blok {
         overflow: hidden;
-        border-radius: 8px;
         // display: none;
-        max-height: 0;
         transition: max-height 0.5s ease-out;
+        height: 560px;
+        width: 370px;
+        padding: 30px;
+        .block-img{
+            width: 370px;
+            height: 370px;
+            padding-bottom: 30px;
+        }
+
 
         &.show {
             // display: block;
@@ -290,27 +326,10 @@ img {
             }
         }
 
-        .gradient {
-            /* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#666666+0,1a1a1a+100&0+0,0.7+100 */
-            background: -moz-linear-gradient(top, rgba(102, 102, 102, 0) 0%, rgba(26, 26, 26, 0.9) 100%);
-            /* FF3.6-15 */
-            background: -webkit-linear-gradient(top, rgba(102, 102, 102, 0) 0%, rgba(26, 26, 26, 0.9) 100%);
-            /* Chrome10-25,Safari5.1-6 */
-            background: linear-gradient(to bottom, rgba(102, 102, 102, 0) 0%, rgba(26, 26, 26, 0.9) 100%);
-            /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
-            filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#00666666', endColorstr='#b31a1a1a', GradientType=0);
-
-            /* IE6-9 */
-            .button {
-                i {
-                    @include transition(0.3s);
-                    font-size: 14px;
-                    color: var(--secondary);
-                }
-            }
-        }
+       
     }
 }
+
 
 .galerij-nav {
 
@@ -544,7 +563,7 @@ img {
     .block-img {
         height: 100%;
         width: 100%;
-        display: flex;
+       // display: flex;
         align-items: center;
         justify-content: center;
 
@@ -700,30 +719,29 @@ img {
     grid-column: auto /span 2;
     grid-row: auto /span 2;
 }
+$colors: #D03184, #FFC20E, #3f3927, #8A3486;
 
-.team{
-    //border-radius: 8px;
+.team {
     height: 326px;
     width: 326px;
-    background: #FFC20E;
+    
+    @for $i from 1 through length($colors) {
+        &:nth-of-type(#{$i}) {
+            $color: nth($colors, $i);
+            background: $color;
+            border-right: 4px solid $color;
+            border-bottom: 4px solid $color;
+        }
+    }
+   
+
     .block-img{
+        width: 40px;
         height: 40px;
-        width: 40px
-        
         
     }
-    .button{
-        @include transition(0.3s);
-        i{
-            font-size: 30px;
-        }
-    }
-    &:hover{
-        img{
-            transform: scale(1.02);
-        }
-        .button{
-            right: 2rem;
-        }
-    }
+
+    
 }
+
+

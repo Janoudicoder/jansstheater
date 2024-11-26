@@ -46,7 +46,7 @@ function img($url, $src, $ext, $alt, $width, $height, $maxdivwidth)
     ";
     }else{
         echo "
-        <div class=\"picture-container\" style=\"padding-top: {$aspectratioDiv}%\">
+        <div class=\"picture-container\" >
             <picture>
                 {$sourcemediathumb}
                 {$sourcemediamid}

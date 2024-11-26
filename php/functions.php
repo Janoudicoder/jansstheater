@@ -428,7 +428,7 @@ function img($url, $src, $alt, $ext, $width, $height, $maxdivwidth)
     ";
     }else{
         echo "
-        <div class=\"picture-container\" style=\"padding-top: {$aspectratioDiv}%\">
+        <div class=\"picture-container\" >
             <picture>
                 {$sourcemediathumb}
                 {$sourcemediamid}
@@ -600,7 +600,7 @@ function getImg($url, $cms_id, $block_id, $taal, $afbsoort, $width, $height, $ma
             } elseif($afbsoort == "hoofdfoto") {
                 
                 $imgCaption = '<div class="hoofd_caption">';
-                    $imgCaption .= '<span class="text-2xl sm:text-1xl md:text-2xl lg:text-4xl ">'.$imgHoofdtitel.'</span>';
+                    $imgCaption .= '<span class="text-2xl sm:text-{} md:text-2xl lg:text-4xl ">'.$imgHoofdtitel.'</span>';
                     $imgCaption .= '<span class="text-2xl sm:text-1xl md:text-2xl lg:text-4xl ">'.$imgSubtitel.'</span>';
                     $imgCaption .= '<button class="btn mt-6">Lees verder</button>';
 

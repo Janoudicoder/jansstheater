@@ -33,10 +33,10 @@ $categorie = the_field('categorie', $catBlock);
 
             if($urlCatItem <> "") {
                 echo '<a class="relative nieuws-laadmeer-blok" href="'.get_link($idCatItem, $categorie.'-'.$berichten).'">';
-                    echo '<div class="absolute bottom-0 z-10 flex w-full flex-col gradient justify-between pt-32 p-6 text-white">
-                            <span class="font-bold text-2xl mb-4">'.$titleCatItem.'</span>
-                            <span class="mb-4">'.strip_tags(limit_text($textCatItem, 90),'').'</span>
-                            <span class="button flex items-center">'.$leesmeer.' <i class="ml-2 fas fa-arrow-right"></i></span>
+                    echo '<div class="absolute bottom-0 z-10 flex w-full flex-col gradient justify-between pt-32 p-2 text-white">
+                            <span class="font-bold text-[16px] mb-4">'.$titleCatItem.'</span>
+
+                            <span class="mb-4 text-[16px]">'.strip_tags(limit_text($textCatItem, 90),'').'</span>
                         </div>';
                     getImg(get_url(), $idCatItem, 0, get_taal(), 'uitgelicht', '500','550','500', 1);
                 echo '</a>';

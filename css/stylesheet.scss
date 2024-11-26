@@ -31,7 +31,7 @@ img:not([src]):not([srcset]) {
 }
 
 .lazy {
-    background: #efefef;
+    background: transparent;
 }
 
 body {
@@ -91,7 +91,7 @@ section {
     position: relative;
 
     @include mq(mqMobileL) {
-        padding: 0 15px;
+       // padding: 0 15px;
     }
 
     &#mainmenu-main {

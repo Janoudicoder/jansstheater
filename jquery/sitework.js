@@ -271,12 +271,16 @@ $(document).ready(function() {
     });
 
     $('.basis-slides').slick({
-        dots: false,
-        infinite: false,
-        arrows: true,
-        speed: 300,
-        slidesToShow: 1,
-        slidesToScroll: 1,
+        autoplay: true,       // Enable automatic sliding
+        autoplaySpeed: 4000,  // Time between slides (3 seconds)
+        arrows: false,        // Hide navigation arrows
+        dots: false,          // Disable navigation dots
+        fade: false,          // Disable fade transition for sliding effect
+        speed: 1000,          // Transition speed (1 second)
+        infinite: true,       // Infinite looping
+        cssEase: 'ease',      // Smoother sliding transition
+        slidesToShow: 1,      // Show one slide at a time
+        slidesToScroll: 1,    // Scroll one slide at a time
         responsive: [{
                 breakpoint: 1024,
                 settings: {
@@ -319,6 +323,62 @@ $(document).ready(function() {
             nextArrow: '<i class="fas fa-chevron-right arrow-right"></i>'
         });
     });
+
+    $('.programma-slider').each(function(index) {
+        $(this).slick({
+            dots: false,
+            arrows: true,
+            infinite: true,   // Loop infinitely
+            speed: 300,
+            slidesToShow: 2,  // Default to showing 2 slides
+            slidesToScroll: 1,
+            centerMode: true, // Center the current slide by default
+            centerPadding: '20%', // Make adjacent slides partially visible (adjust as needed)
+            appendArrows: $(this),
+            prevArrow: '<i class="slick-prev"></i>',
+            nextArrow: '<i class="slick-next"></i>',
+            responsive: [
+                {
+                    breakpoint: 770, // Small screens (e.g., tablets or mobile)
+                    settings: {
+                        slidesToShow: 2,  // Show only 1 slide on small screens
+                        centerMode: false, // Disable centerMode on small screens
+                        centerPadding: '0', 
+                        arrows: false,
+                    }
+                },
+                {
+                    breakpoint: 637, // Small screens (e.g., tablets or mobile)
+                    settings: {
+                        slidesToShow: 1,  // Show only 1 slide on small screens
+                        centerMode: false, // Disable centerMode on small screens
+                        centerPadding: '0', 
+                        arrows: false,
+                    }
+                }
+            ]
+        });
+    });
+    
+
+    $('.galerij-slider').each(function(index) {
+        $(this).slick({
+            dots: false,
+            arrows: false,
+            infinite: false,  // Loop infinitely
+            speed: 300,
+            slidesToShow: 1,  // Show 1 slide at a time
+            slidesToScroll: 1,  // Scroll 1 slide at a time
+            centerMode: false,  // Disable centering of the current slide
+            centerPadding: '0%',  // No padding for adjacent slides
+            appendArrows: $(this),
+            prevArrow: '<i class="slick-prev"></i>',
+            nextArrow: '<i class="slick-next"></i>'
+        });
+    });
+    
+
+    
 
     $('.galerij-block').slick({
         dots: true,
