@@ -59,7 +59,7 @@ footer {
 
 footer {
     @include mq(mqTabletPort) {
-        padding-bottom: 62px;
+        padding-bottom: 54px;
     }
 }
 
@@ -264,7 +264,7 @@ ul.documenten {
         font-weight: normal;
 
         >a {
-            color: var(--text);
+            color: var(--primary);
             padding: 1rem;
             text-decoration: none;
             display: block;
@@ -292,7 +292,7 @@ ul.documenten {
 
             &:hover {
                 color: var(--text);
-                background-color: darken(white, 3%);
+                background-color:#7B2377 ;
 
                 &::after {
                     color: var(--primary);
@@ -351,3 +351,4 @@ ul.documenten {
 @import "jquery.fancybox.min.css";
 @import "_animate.css";
 // @import "swiper-bundle.min.css";
+@import "../flipbook/src/css/flipbook.css";

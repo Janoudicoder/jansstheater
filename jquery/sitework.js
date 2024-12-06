@@ -270,7 +270,7 @@ $(document).ready(function() {
         ]
     });
 
-    $('.basis-slides').slick({
+    $('.basis-slides').slick({ 
         autoplay: true,       // Enable automatic sliding
         autoplaySpeed: 4000,  // Time between slides (3 seconds)
         arrows: false,        // Hide navigation arrows
@@ -330,7 +330,7 @@ $(document).ready(function() {
             arrows: true,
             infinite: true,   // Loop infinitely
             speed: 300,
-            slidesToShow: 2,  // Default to showing 2 slides
+            slidesToShow: 3,  // Default to showing 2 slides
             slidesToScroll: 1,
             centerMode: true, // Center the current slide by default
             centerPadding: '20%', // Make adjacent slides partially visible (adjust as needed)
@@ -338,6 +338,25 @@ $(document).ready(function() {
             prevArrow: '<i class="slick-prev"></i>',
             nextArrow: '<i class="slick-next"></i>',
             responsive: [
+
+                {
+                    breakpoint: 1500, // Small screens (e.g., tablets or mobile)
+                    settings: {
+                        slidesToShow: 3,  // Show only 1 slide on small screens
+                        centerMode: true, // Disable centerMode on small screens
+                        centerPadding: '10%', 
+                        arrows: true,
+                    }
+                },
+                {
+                    breakpoint: 1200, // Small screens (e.g., tablets or mobile)
+                    settings: {
+                        slidesToShow: 3,  // Show only 1 slide on small screens
+                        centerMode: false, // Disable centerMode on small screens
+                        centerPadding: '0', 
+                        arrows: true,
+                    }
+                },
                 {
                     breakpoint: 770, // Small screens (e.g., tablets or mobile)
                     settings: {
@@ -363,17 +382,28 @@ $(document).ready(function() {
 
     $('.galerij-slider').each(function(index) {
         $(this).slick({
-            dots: false,
-            arrows: false,
-            infinite: false,  // Loop infinitely
-            speed: 300,
-            slidesToShow: 1,  // Show 1 slide at a time
-            slidesToScroll: 1,  // Scroll 1 slide at a time
             centerMode: false,  // Disable centering of the current slide
             centerPadding: '0%',  // No padding for adjacent slides
-            appendArrows: $(this),
-            prevArrow: '<i class="slick-prev"></i>',
-            nextArrow: '<i class="slick-next"></i>'
+            responsive: [
+                {
+                    breakpoint: 9999,
+                    settings: "unslick"
+                },
+                {
+                    breakpoint: 1300,
+                    settings: {
+                        dots: false,
+                        arrows: false,
+                        infinite: false,  // Loop infinitely
+                        speed: 300,
+                        slidesToShow: 1,  // Show 1 slide at a time
+                        slidesToScroll: 1,
+                        appendArrows: $(this),
+                        prevArrow: '<i class="slick-prev"></i>',
+                        nextArrow: '<i class="slick-next"></i>',
+                    }
+                }
+            ]
         });
     });
     

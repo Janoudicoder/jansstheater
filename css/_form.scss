@@ -299,7 +299,13 @@ h2{
     clear: both;
     padding: 0.25rem 0 0.75rem 0;
 }
-.formulier .btn {
+.formulier .button {
+    color: white;
+    &:hover{
+        background: #f32f94;
+        cursor: pointer;
+    }
+    
     display: block; /* Ensure the button takes up the full width */
     width: 100%; /* Make the button span the entire width of its container */
     padding: 13px 15px; /* Add some padding for a better appearance */

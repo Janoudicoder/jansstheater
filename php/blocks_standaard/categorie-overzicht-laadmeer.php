@@ -76,4 +76,4 @@ $categorie = the_field('categorie', $catBlock);
             }
         });
     });
-</script>
+</script>  

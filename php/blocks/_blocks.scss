@@ -12,6 +12,8 @@
         line-height: 30px;
     }
 
+    
+
     @include mq(1200px) {
         font-size: 16px;
         line-height: 28px;
@@ -51,6 +53,11 @@
         padding: 0.5rem;
         border-radius: 8px;
     }
+    h2{
+        i{
+            font-size: 50px;
+        }
+    }
 
     .image-slider,
     .image-slider-2 {
@@ -60,11 +67,13 @@
         .slick-track {
             height: 100%;
 
-            // .block-img {
-            //     .picture-container {
-            //         padding-top: 50% !important;
-            //     }
-            // }
+            .block-img {
+                .picture-container {
+                    picture {
+                         position: relative;
+                    }
+                }
+            }
         }
 
         &:hover {
@@ -198,7 +207,6 @@
        
 
         
-        // Target "Jansstheater" using specific styles
         
     }
     p{
@@ -207,37 +215,65 @@
     }
 
 }
+i{
+    color: #D03184;
+    font-style: normal;
+
+}
+.programma{
+    i{
+        color: #FFC20E;
+        font-style: normal;
+    
+    }
+    h2{
+        font-size: 38px;
+        font-family: Playfair Display;
+    }
+
+}
+.diensten{ 
+    h2{
+        font-size: 38px;
+        font-family: Playfair Display;
+    }
+
+}
+
 
 #galerij-container {
     grid-template-columns: 370px 270px; /* Dit zorgt ervoor dat de eerste kolom 270px breed is en de tweede 370px */
     grid-template-rows: 300px 270px; /* Dit maakt de eerste rij 300px hoog en de tweede 270px */
-    gap: 10px;
+    gap: 73px;
     width: 56%;
     max-width: 100%;
+    position: relative;
 }
 
 #galerij-container>:first-child{
     height: 270px;
-    place-self: self-end;
+    place-self: center;
     width: 370px;
-    box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.3); /* Add drop shadow */
+    box-shadow: 10px 11px 10px rgba(0,0,0,0.3)/* Add drop shadow */
 }
 
 #galerij-container>:nth-child(2){
     height: 300px;
     width: 270px;
     position: absolute;
-    bottom: 26px;
-    box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.3); /* Add drop shadow */
+    bottom: 4px;
+    box-shadow: 10px 11px 10px rgba(0,0,0,0.3) /* Add drop shadow */
 }
+
+
 
 #galerij-container>:nth-child(3){
     height: 300px;
     width: 270px;
     position: absolute;
-    right: 49px;
-    bottom: 392px;
-    box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.3); /* Add drop shadow */
+    right: -281px;
+    bottom: 396px;
+    box-shadow: 10px 11px 10px rgba(0,0,0,0.3) /* Add drop shadow */
 }
 
 #galerij-container>:nth-child(4){
@@ -245,34 +281,15 @@
     width: 370px;
     overflow: visible;
     position: absolute;
-    bottom: 81px;
-    right: 36px;
-    box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.3); /* Add drop shadow */
+    bottom: 59px;
+    right: -289px;
+    box-shadow: 10px 11px 10px rgba(0,0,0,0.3) /* Add drop shadow */
 }
 
 /* Default Grid Layout for Larger Screens */
 
 
 /* Media query for small screens */
-@media (max-width: 640px) {
-    #galerij-container {
-        place-content: center;
-        text-align: -webkit-center;
-        overflow: hidden;
-        width: 100%;
-    }
-
-    .slider {
-        display: flex;
-        transition: transform 0.5s ease;
-    }
-
-    .slider-item {
-        flex: 0 0 100%; /* Each image takes 100% width */
-        width: 100%;
-        height: auto;
-    }
-}
 
 
 
@@ -310,7 +327,7 @@ img {
         .block-img{
             width: 370px;
             height: 370px;
-            padding-bottom: 30px;
+            padding-bottom: 47px;
         }
 
 
@@ -550,6 +567,9 @@ img {
 
     .slick-next::before {
         content: '\f054' !important;
+        font-size: 26px;
+        color: white;
+
     }
 
     .slick-dots {

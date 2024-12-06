@@ -916,7 +916,7 @@ if ($_GET['opgeslagen'] == "ja") {
                     if ($row['keuze1'] == "nieuws") { ?>
                         <span class="dropdown-title">Zichtbaar tot en met</span>
                         <input type="text" name="datum2" class="inputveld full dropdown sidebar" id="datepicker2"
-                           placeholder="Datum" value="<?php echo $row['datum2']; ?>"/>
+                           placeholder="Datum" value="<?php echo $row['datum2']; ?>"/> 
                 <?php } ?>
             </div>
             <div class="sidebar-box">

@@ -13,8 +13,8 @@ $sqlCatLoadMore->bind_result($idCatItem);
 $categorie = the_field('categorie', $catBlock);
 ?>
 
-<div id="block-<?=$blockId;?>" class="blocken w-full mx-auto relative nieuws-laadmeer my-16">
-<div class="w-full  md:w-2/3 text-center md:ml-0 ">
+<div id="block-<?=$blockId;?>" class="blocken programma w-full mx-auto relative nieuws-laadmeer my-16">
+<div class="w-full  md:w-[33.666667%] text-center md:ml-0 ">
         <?php 
         if($titleBlock){
             echo '<h2 class="inline-block text-[38px] w-full">'.$titleBlock.'</h2>';
@@ -24,7 +24,7 @@ $categorie = the_field('categorie', $catBlock);
         }
         ?>
     </div>
-    <div class="programma-slider pt-4 pb-16">
+    <div class="programma-slider pt-4">
         <?php
         while ($sqlCatLoadMore->fetch()) {
             $titleCatItem = the_field('item2', $idCatItem);
@@ -39,8 +39,8 @@ $categorie = the_field('categorie', $catBlock);
                 $daysLeft = ceil(($itemDate - $currentDate) / (60 * 60 * 24)); 
 
                 echo '<a class="relative nieuws-laadmeer-blok" href="'.get_link($idCatItem, $categorie.'-'.$berichten).'">';
-                    echo '<div class="absolute bottom-0 z-10 flex flex-col w-[370px] gradient justify-between pt-32 p-2 text-white">
-                            <span class="font-bold text-[24px] mb-4">'.$dateCatItem.'</span>
+                echo '<div class="absolute bottom-0 z-10 flex flex-col w-full sm:w-[370px] gradient justify-between pt-32 p-2 text-white">
+                <span class="font-bold text-[24px] mb-4"><i class="fas fa-calendar-day"></i> '.$dateCatItem.'</span>
                             <span class="text-[16px] mb-4">'.$titleCatItem.'</span>
                             <span class="mb-4 text-gray-400">'.strip_tags(limit_text($textCatItem, 90),'').'</span>';
                     

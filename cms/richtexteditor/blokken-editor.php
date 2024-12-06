@@ -49,9 +49,11 @@
             rte_replaceSpan(editor1, 'text-decoration-line: underline;', 'u');
         }, 100); 	
     });
+    
     editor1.attachEvent("exec_command_strike", function (state, cmd, value) {
         setTimeout(() => {
             rte_replaceSpan(editor1, 'text-decoration: line-through;', 's');
         }, 100); 	
     });
+    
 </script>

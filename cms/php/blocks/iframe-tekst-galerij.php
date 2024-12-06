@@ -134,6 +134,8 @@ $categorieValue = ($taal != 'nl') ? $rowBlockData['categorie'] : $rowBlockData['
     </head>
     <body>
         <form id="contentForm" action="<?php echo $PHP_SELF ?>?blockid=<?=$block_id;?>&taal=<?=$taal;?>&cmsid=<?=$cms_id;?>" method="post" enctype="multipart/form-data">
+        <label for="tekst">Geef tekst een kleur door het gewenste woord te markeren met "I".</label>
+
             <div class="content-container no-border-top mt-0 mb-30 pb-30 float-left">
                 <div class="form-group">
                     <label for="tekst">Tekstinvoer</label>
@@ -143,6 +145,13 @@ $categorieValue = ($taal != 'nl') ? $rowBlockData['categorie'] : $rowBlockData['
                     </div>
                     <div id="tekst_editor" style="min-height:400px;max-height:800px" class="inputveld invoer sitework-editor">
                         <?=$textGalerij;?>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <labelw for="blok-link">Achtergrond</label>
+                    <div class="inputveld invoer checkbox">
+                        <input type="checkbox" name="vehicle1" id="bg-color" value="1" <?php echo ($categorieValue == 1) ? 'checked' : ''; ?>>
+                        <label for="bg-color">Achtergrond kleur</label>
                     </div>
                 </div>
                 <div class="form-group">
@@ -160,12 +169,6 @@ $categorieValue = ($taal != 'nl') ? $rowBlockData['categorie'] : $rowBlockData['
                 <input type="hidden" name="taal" value="<?=$taal;?>">
                 <input type="hidden" name="blockid" value="<?=$block_id;?>">
                 <input type="hidden" name="cmsid" value="<?=$cms_id;?>">
-                <div class="flex items-center space-x-3">
-                <input type="checkbox" id="vehicle1" name="vehicle1" value="1" <?php echo ($categorieValue == 1) ? 'checked' : ''; ?> 
-                    class="h-5 w-5 text-indigo-600 border-gray-300 rounded focus:ring-indigo-500">
-                <label for="vehicle1" class="text-gray-700 font-medium">Achtergrond</label>
-            </div>
-
                 <button name="opslaan-knop" type="submit" class="btn fl-left mr-10 save">Opslaan</button>
             </div>
         </form>

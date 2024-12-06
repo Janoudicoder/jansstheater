@@ -1,7 +1,7 @@
 <section id="content-vervolg-main">
 	<div class="container mx-auto grid grid-cols-1 md:grid-cols-5 gap-x-32 pt-6">
 
-		<article class="col-span-3 content pb-8">
+		<article class="col-span-3 content pb-8 pl-12 text-white">
 			<?php if(the_field('verberg_pagina_titel', 'cf') <> 'ja'): ?>
 				<h1><? echo get_title(); ?></h1>
 			<?php endif; ?>

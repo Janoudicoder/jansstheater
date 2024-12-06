@@ -242,6 +242,10 @@ if (get_setting("makelaar") == true) {
     <link href="https://fonts.googleapis.com/css2?family=Alegreya:ital,wght@0,400..900;1,400..900&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Source+Sans+3:ital,wght@0,200..900;1,200..900&display=swap" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="<?php echo get_url(); ?>/fa/css/all.min.css">
     <link rel="stylesheet" type="text/css" href="<?php echo get_url(); ?>/css/stylesheet.css" />
+
+    <!-- Flipbook -->
+    <script src="<?php echo get_url(); ?>/flipbook/build/js/flipbook.min.js"></script>
+    <link rel="stylesheet" href="<?php echo get_url(); ?>/flipbook/build/css/flipbook.min.css">
     
     <!-- jquery files -->
     <script type="text/javascript" src="<?php echo get_url(); ?>/jquery/jquery-3.3.1.min.js"></script>
@@ -272,7 +276,7 @@ if (get_setting("makelaar") == true) {
         include "cookie/cookie.php";
     } ?>
     
-    <header><?php include('php/header.php'); ?></header>
+    <header style="padding-bottom: 57px"><?php include('php/header.php'); ?></header>
     <main>
         <?php 
         if (get_id() == "1") {

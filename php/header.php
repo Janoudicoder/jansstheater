@@ -1,5 +1,5 @@
 <section id="header-main" class="w-full">
-    <div class="flex justify-between h-full w-full "> 
+    <div class="flex justify-between h-full p-[30px] w-full "> 
         <div class="left flex flex-col justify-center">
             <a href="<?php echo home_url(); ?>" id="logo">
                 <img src="<?php echo get_url(); ?>/images/logo.png" width="100%" border="0" alt="<?php echo get_setting('naamwebsite'); ?>"/>

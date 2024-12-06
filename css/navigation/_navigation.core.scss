@@ -10,6 +10,7 @@
 	display: fixed;
 	position: relative;
 	font-family: inherit;
+	text-transform: uppercase;
 	background-color: $navbar-background-color;
 
 	*{
@@ -200,7 +201,7 @@
 
 		// Menu links
 		> a{
-			padding: 3px 20px 19px 20px;			
+			padding: 14px 0px 19px 20px;			
 			display: inline-block;
 			position: relative;
 			text-decoration: none;

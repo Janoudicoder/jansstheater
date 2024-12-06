@@ -308,7 +308,10 @@ function save_and_strip(id, editor) {
     });
 
     // Verwijder alle attributen van de overige elementen
-    editorHTML = editorHTML.replaceAll(/\s+\w+="[^"]*"/gi, '');
+    editorHTML = editorHTML.replaceAll(/<(?!a\b)[^>]+\s+\w+="[^"]*"/gi, match => {
+        // Remove all attributes from non-<a> elements
+        return match.replace(/\s+\w+="[^"]*"/g, '');
+    });
 
     document.getElementById(id).value = editorHTML;
 }

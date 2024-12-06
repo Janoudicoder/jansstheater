@@ -477,7 +477,7 @@ foreach($formulierenIds as $formulierId){
 
            
             echo "<input type=\"hidden\" name=\"verzenden-".$formulierId."\" value=\"1\"/>";
-            echo "<button type=\"submit\" class=\"btn submit-form\">".$verzenden."</button>";
+            echo "<button type=\"submit\" class=\"button submit-form\">".$verzenden."</button>";
         echo "</form>";
         echo "</div>";
         $teller ++;
