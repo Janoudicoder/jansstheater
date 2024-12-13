@@ -188,7 +188,6 @@ img {
 
 	.dp-highlighter.nogutter ol,
 	.dp-highlighter.nogutter ol li {
-		list-style: none !important;
 		margin-left: 0px !important;
 	}
 

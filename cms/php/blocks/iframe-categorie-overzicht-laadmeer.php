@@ -187,6 +187,16 @@ if($_POST['opslaan'] == 1 && $_POST['blockTaal'] == 'false') {
                     </select>
                 </div>
                 <div class="form-group">
+                    <label for="tekst">Slider</label>
+                        <div class="inputveld invoer checkbox">
+                            <input type="checkbox" id="bg-color" name="bg-color" onchange="updateTitle()" <?php echo ($titelCatLaadMeer == "1") ? 'checked' : ''; ?>>
+                            <label for="bg-color">Slider</label>
+                        </div>
+                    <input type="hidden" id="hidden-value" name="titel" value="0">
+                </div>
+
+
+                <div class="form-group">
                     <label for="blok-link">Ga naar block</label>
                     <div class="inputveld invoer blok-link">
                         <a target="_blank" href="<?=$paginaBlockURL;?>#block-<?=$block_id;?>"><?=$paginaBlockURL;?>#block-<?=$block_id;?></a>
@@ -206,6 +216,20 @@ if($_POST['opslaan'] == 1 && $_POST['blockTaal'] == 'false') {
         </form>
     </body>
 </html>
+    <script type="text/javascript">
+        function updateTitle() {
+            var checkbox = document.getElementById('bg-color');
+            var hiddenValueInput = document.getElementById('hidden-value');
+
+            if (checkbox.checked) {
+                hiddenValueInput.value = "1";
+            } else {
+                hiddenValueInput.value = "0";
+            }
+
+            console.log("Hidden input value:", hiddenValueInput.value);
+        }
+    </script>
 
 <?php 
     include '../../richtexteditor/blokken-editor.php';

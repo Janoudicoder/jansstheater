@@ -43,6 +43,9 @@ if($_GET['taal'] == 'nl' OR !isset($_GET['taal'])) {
             'galerij-grid',
             'tekst-galerij'
         );
+        $docsUpload = array(
+            'flib-book'
+        );
 
         ?>
 
@@ -74,6 +77,10 @@ if($_GET['taal'] == 'nl' OR !isset($_GET['taal'])) {
                             <a class="btn float-right mb-10 image" data-fancybox data-small-btn="true" data-type="iframe"
                             href="php/media_upload.php?id=<?= $_GET['id']; ?>&block_id=<?= $blocksid; ?>&taal=<?=$_GET['taal'];?>&media=afbeelding&upload_from=block"
                             href="javascript:;">Afbeeldingen</a>
+                        <?php } ?>
+                        <?php if (in_array($blockBestand, $docsUpload)) { ?>
+                            <a class="btn float-right mb-10 document" data-fancybox data-small-btn="true" data-type="iframe"
+                            href="php/media_upload.php?id=<?= $_GET['id']; ?>&block_id=<?= $blocksid; ?>&taal=<?=$_GET['taal'];?>&media=document&upload_from=block" href="javascript:;">Documenten</a>
                         <?php } ?>
                     </h3>
                     <!--Iframe inladen-->
@@ -117,6 +124,9 @@ if($_GET['taal'] == 'nl' OR !isset($_GET['taal'])) {
             'galerij-grid',
             'tekst-galerij'
         );
+        $docsUpload = array(
+            'flib-book'
+        );
 
         ?>
 
@@ -148,6 +158,10 @@ if($_GET['taal'] == 'nl' OR !isset($_GET['taal'])) {
                             <a class="btn float-right mb-10 image" data-fancybox data-small-btn="true" data-type="iframe"
                             href="php/media_upload.php?id=<?= $_GET['id']; ?>&block_id=<?= $blocksid; ?>&taal=<?=$_GET['taal'];?>&media=afbeelding&upload_from=block"
                             href="javascript:;">Afbeeldingen</a>
+                        <?php } ?>
+                        <?php if (in_array($blockBestand, $docsUpload)) { ?>
+                            <a class="btn fl-left full mb-10 arrow" data-fancybox data-small-btn="true" data-type="iframe"
+                            href="php/media_upload.php?id=<?= $_GET['id']; ?>&block_id=0&taal=<?=$_GET['taal'];?>&media=document&upload_from=page" href="javascript:;">Documenten</a>
                         <?php } ?>
                     </h3>
                     <!--Iframe inladen-->

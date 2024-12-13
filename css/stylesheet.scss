@@ -111,6 +111,8 @@ section {
         ul,
         ol {
             margin-left: 15px;
+            list-style: inside !important;
+            line-height: 2rem;
         }
 
         .content {

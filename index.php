@@ -281,9 +281,7 @@ if (get_setting("makelaar") == true) {
         <?php 
         if (get_id() == "1") {
             include('php/startpagina.php');
-        } elseif(get_id() == '91') {
-            include('php/zoeken.php');
-        } elseif ($_GET['page'] == 'woning') {
+        }elseif ($_GET['page'] == 'woning') {
             include 'php/realworks/woningen-detail.php';
         } else {
             include('php/vervolgpagina.php');

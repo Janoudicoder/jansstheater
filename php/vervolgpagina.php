@@ -9,9 +9,10 @@
 			<p><?php echo str_replace("[leesmeer]", "", get_content()); ?></p>
 			<?php include ('php/documenten.php'); ?>
 			<?php
-				if (the_field('formulieren')) {
+				if ($blockid === 0 && the_field('formulieren')) {
 					include('php/formulieren.php');
 				}
+				
 				
 				if(strpos(get_kenmerk(), 'zoekbalk') !== false){
 					include('zoeken.php'); 

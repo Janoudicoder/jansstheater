@@ -58,6 +58,9 @@
             font-size: 50px;
         }
     }
+    ul{
+        list-style: disc !important;
+    }
 
     .image-slider,
     .image-slider-2 {
@@ -322,7 +325,7 @@ img {
         // display: none;
         transition: max-height 0.5s ease-out;
         height: 560px;
-        width: 370px;
+        //width: 370px;
         padding: 30px;
         .block-img{
             width: 370px;
@@ -393,7 +396,7 @@ img {
             display: flex;
             flex-direction: row;
             align-items: stretch;
-            list-style: none;
+            list-style: disc;
             margin: 0;
             padding: 0;
             bottom: -20px;
@@ -427,6 +430,13 @@ img {
         }
 
     }
+}
+.flipbook{
+ul{
+    list-style: disc !important;
+    
+}
+
 }
 
 .video {

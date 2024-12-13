@@ -360,13 +360,18 @@ if (isset($_POST) and $_SERVER['REQUEST_METHOD'] == "POST") {
             foreach ($mediaKeuze as $newMedia) {
                 $mediaSave = explode('-', $newMedia);
                 $mediaId = $mediaSave[1];
-
-                $sql_insert_doc = $mysqli->query("INSERT sitework_doc set naam = '$doc_naam',
-                                                    cms_id = '".$_GET['id']."',
-                                                    volgorde = '$volgorde',
-                                                    url = '$mediaId' ") 
-                or die($mysqli->error.__LINE__);
+            
+                $block_id_value = isset($block_id) && !empty($block_id) ? $block_id : 'NULL';
+            
+                $sql_insert_doc = $mysqli->query("INSERT INTO sitework_doc SET 
+                                                  naam = '$doc_naam',
+                                                  cms_id = '" . $_GET['id'] . "',
+                                                  volgorde = '$volgorde',
+                                                  block_id='" . $_GET['block_id'] . "',
+                                                  url = '$mediaId'") 
+                                                  or die($mysqli->error . __LINE__);
             }
+            
 
             echo "
             <div class=\"alert alert-success fancybox\">
@@ -640,7 +645,11 @@ $(document).ready(function () {
                                     $querydrag = $mysqli->query("SELECT * FROM sitework_img WHERE cms_id = '".$_GET['id']."' AND block_id = '0' AND img_taal = '".$_GET['taal']."' order by volgorde") or die($mysqli->error.__LINE__);
                                 }
                             } else {
-                                $querydrag = $mysqli->query("SELECT * FROM sitework_doc WHERE cms_id = '".$_GET['id']."' AND doc_taal = '".$_GET['taal']."' order by volgorde") or die($mysqli->error.__LINE__);
+                                if($_GET['block_id']){
+                                    $querydrag = $mysqli->query("SELECT * FROM sitework_doc WHERE block_id = '".$_GET['block_id']."' AND doc_taal = '".$_GET['taal']."' order by volgorde") or die($mysqli->error.__LINE__);
+                                }else{
+                                    $querydrag = $mysqli->query("SELECT * FROM sitework_doc WHERE cms_id = '".$_GET['id']."' AND doc_taal = '".$_GET['taal']."' order by volgorde") or die($mysqli->error.__LINE__);
+                                }
                             }
                             
                             if ($querydrag->num_rows == 0) {
